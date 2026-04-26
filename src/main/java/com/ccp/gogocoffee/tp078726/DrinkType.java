@@ -8,7 +8,11 @@ package com.ccp.gogocoffee.tp078726;
  *
  * @author juana
  */
-public class DrinkType {
+public enum DrinkType {
+    CAPPUCCINO(9, "Cappuccino"),
+    ESPRESSO(6, "Espresso"),
+    JUICE(7, "Juice");
+    
     private final int price;
     private final String name;
     
