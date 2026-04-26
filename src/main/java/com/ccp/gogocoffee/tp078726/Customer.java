@@ -17,7 +17,7 @@ public class Customer extends Thread {
     private static final AtomicLong idGenerator = new AtomicLong(1);
     
     private final long id;
-    private final String customerName;   // logical name, e.g. "Customer1"
+    private final String customerName;
     private final Cafe cafe;
     private final DrinkType orderedDrink;
     private final long arrivalTime;
@@ -54,7 +54,7 @@ public class Customer extends Thread {
                     + " is waiting in line to order.");
             cafe.addToOrderingQueue(this);
             
-            // Block until the barista calls drinkReady() (or 30s safety timeout)
+            // Block until the barista calls drinkReady()
             synchronized (this) {
                 wait(30000);
             }
